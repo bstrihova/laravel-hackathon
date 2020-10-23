@@ -7,6 +7,10 @@
     <a href={{action('AnimalController@create', $owner->id) }}>Create a new Animal</a>
 </p>
 
+<p>
+    <a href={{action('OwnerController@edit', $owner->id) }}>Update owner</a>
+</p>
+
 <div class="animals">
     <h2>Animals</h2>
     <ul>

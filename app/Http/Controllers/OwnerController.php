@@ -87,9 +87,10 @@ class OwnerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($owner_id)
     {
-        //
+        $owner = Owner::findOrFail($owner_id);
+        return view('owners/edit', compact('owner'));
     }
 
     /**
@@ -99,9 +100,19 @@ class OwnerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $owner_id)
     {
-        //
+        $owner = Owner::findOrFail($owner_id);
+
+        $owner->first_name = $request->input('first_name');
+        $owner->surname = $request->input('surname');
+        $owner->address = $request->input('address');
+        $owner->email = $request->input('email');
+        $owner->phone_number = $request->input('phone_number');
+
+        $owner->save();
+
+        return redirect()->action('OwnerController@edit', $id);
     }
 
     /**

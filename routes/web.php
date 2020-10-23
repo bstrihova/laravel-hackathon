@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get("/animals", "AnimalController@index");
 Route::get("/animals/create/{owner_id}", "AnimalController@create");
 Route::get("/animals/{animal_id}", "AnimalController@show");
@@ -30,6 +31,7 @@ Route::post("/animals/edit/{animal_id}", "AnimalController@update");
 Route::get("/owners", "OwnerController@index");
 Route::get("/owners/create", "OwnerController@create");
 Route::get("/owners/{owner_id}", "OwnerController@show");
+Route::get("/owners/edit/{owner_id}", "OwnerController@edit");
+Route::post("/owners/edit/{owner_id}", "OwnerController@update");
 Route::post("/owners", "OwnerController@store");
-
 
