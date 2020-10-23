@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Animal;
+use App\Models\Owner;
 
 class OwnerController extends Controller
 {
@@ -13,7 +15,8 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        //
+        $owners = Owner::with("animals")->orderBy("surname")->get();
+        return view("owners/index", compact("owners"));
     }
 
     /**
@@ -45,7 +48,8 @@ class OwnerController extends Controller
      */
     public function show($id)
     {
-        //
+        $owner = Owner::with("animals")->findOrFail($id);
+        return view("owners/show", compact("owner"));
     }
 
     /**
