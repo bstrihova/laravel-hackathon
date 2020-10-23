@@ -33,7 +33,7 @@ $data = json_decode($json_string); // decode the string into data
                 $animal->breed = $pet->breed;
                 $animal->weight = $pet->weight;
                 $animal->age = $pet->age;
-                $animal->photo = $pet->photo;
+                $animal->photo = 'images/pets/' . $pet->photo;
                 $animal->save();
             }
             
