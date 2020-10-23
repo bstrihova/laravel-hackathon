@@ -15,7 +15,7 @@ class StHectorsDataSeeder extends Seeder
      */
     public function run()
     {
-        $json_string = file_get_contents('storage\clients.json'); // replace path with a real path
+        $json_string = file_get_contents('storage/clients.json'); // replace path with a real path
 $data = json_decode($json_string); // decode the string into data
 //var_dump($data);
 
