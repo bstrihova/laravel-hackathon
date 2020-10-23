@@ -11,6 +11,10 @@
     <a href={{action('OwnerController@edit', $owner->id) }}>Update owner</a>
 </p>
 
+<p>
+    <a href={{action('OwnerController@index') }}>Go back to owners list</a>
+</p>
+
 <div class="animals">
     <h2>Animals</h2>
     <ul>

@@ -17,5 +17,9 @@
     <label for="phone_number">Phone Number:</label>
     <input type="text" name="phone_number" value='{{$owner->phone_number}}'><br>
 
-    <button type="submit">Add new owner</button>
+    <button type="submit">Edit owner</button>
 </form>
+
+<a href={{action('OwnerController@show', $owner->id)}}>Go back to Animal</a>
+
+

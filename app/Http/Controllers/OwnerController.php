@@ -112,7 +112,7 @@ class OwnerController extends Controller
 
         $owner->save();
 
-        return redirect()->action('OwnerController@edit', $id);
+        return redirect()->action('OwnerController@edit', $owner_id);
     }
 
     /**
