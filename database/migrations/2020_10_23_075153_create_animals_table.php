@@ -19,9 +19,9 @@ class CreateAnimalsTable extends Migration
             $table->string('name');
             $table->string('species')->nullable();
             $table->string('breed')->nullable();
-            $table->unsignedInteger('age');
-            $table->unsignedInteger('weight');
-            $table->string('photo');
+            $table->unsignedInteger('age')->nullable();
+            $table->unsignedInteger('weight')->nullable();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }
