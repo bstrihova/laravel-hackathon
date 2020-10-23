@@ -11,13 +11,12 @@
     <button type="submit">Search</button>
 </form>
 
-
 <ul>
 @foreach($owners as $owner) 
     <a href={{action('OwnerController@show', $owner->id) }}><li>{{$owner->surname}} {{$owner->first_name}}</li></a>
     <ul>
         @foreach($owner->animals as $animal) 
-        <li>{{$animal->name}}</li>
+        <a href="{{action('AnimalController@show', $animal->id)}}"><li>{{$animal->name}}</li></a>
         @endforeach
     </ul>
 @endforeach

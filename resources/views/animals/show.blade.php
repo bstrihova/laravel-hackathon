@@ -1,4 +1,4 @@
-<h1>Animal {{ $animal->name }}</h1>
+<h1>Animal: {{ $animal->name }}</h1>
 
 <p>Age: {{ $animal->age }}</p>
 <p>Weight: {{ $animal->weight }} Lbs</p>
