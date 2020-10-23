@@ -1,10 +1,13 @@
 <h1>List of owner</h1>
 
-<form action="{{action('OwnerController@searchOwner')}}" method="post">
-    @csrf
+<form action="{{action('OwnerController@index')}}" method="get">
+    
     <label> Owner's Surname: <br>
-        <input type="text" name="surname" id="">
+        <input type="text" name="surname" id=""><br>
     </label>  
+    <label> Animal's Name: <br>
+        <input type="text" name="name" id=""><br>
+    </label> 
     <button type="submit">Search</button>
 </form>
 

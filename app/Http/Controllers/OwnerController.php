@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Animal;
 use App\Models\Owner;
+use Illuminate\Database\Eloquent\Builder;
+
 
 class OwnerController extends Controller
 {
@@ -13,16 +15,25 @@ class OwnerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $owners = Owner::with("animals")->orderBy("surname")->get();
-        return view("owners/index", compact("owners"));
-    }
 
-    public function searchOwner(Request $request)
+    public function index(Request $request)
     {
         $surname = $request->input('surname');
-        $owners = Owner::with("animals")->where('surname', 'like','%' . $surname . '%')->orderBy("surname")->get();
+        $name = $request->input('name');
+        $query = Owner::with("animals")->orderBy("surname");
+
+        if ($surname) {
+            $query->where('surname', 'like','%' . $surname . '%'); 
+        } 
+
+        if ($name) {
+            $query->whereHas('animals', function (Builder $query) use ($name){
+                $query->where('animals.name', 'like', '%' . $name . '%' );
+            });  
+        }
+
+        $owners = $query->get();
+        
         return view("owners/index", compact("owners"));
     }
 
