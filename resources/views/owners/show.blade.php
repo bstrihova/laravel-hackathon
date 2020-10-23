@@ -3,6 +3,10 @@
 <p>Telephone: {{$owner->phone_number}}</p>
 <p>E-mail: {{$owner->email}}</p>
 
+<p>
+    <a href={{action('AnimalController@create', $owner->id) }}>Create a new Animal</a>
+</p>
+
 <div class="animals">
     <h2>Animals</h2>
     <ul>

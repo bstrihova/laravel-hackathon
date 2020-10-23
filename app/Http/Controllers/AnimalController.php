@@ -26,7 +26,7 @@ class AnimalController extends Controller
      */
     public function create()
     {
-        //
+        return view('animals/create');
     }
 
     /**
@@ -37,7 +37,18 @@ class AnimalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $animal = new Animal;
+
+        $animal->owner_id = 
+        $animal->name = $request->input('name');
+        $animal->species = $request->input('species');
+        $animal->breed = $request->input('breed');
+        $animal->age = $request->input('age');
+        $animal->weight = $request->input('weight');
+
+        $animal->save();
+
+        return redirect()->action('OwnerController@show', $owner->id);
     }
 
     /**

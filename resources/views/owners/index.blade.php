@@ -1,4 +1,7 @@
 <h1>List of owner</h1>
+<p>
+<a href="{{action('OwnerController@create')}}">Create a new owner</a>
+</p>
 
 <form action="{{action('OwnerController@index')}}" method="get">
     

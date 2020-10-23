@@ -18,8 +18,13 @@ Route::get('/', function () {
 });
 
 Route::get("/animals", "AnimalController@index");
+Route::get("/animals/create/{id}", "AnimalController@create");
 Route::get("/animals/{animal_id}", "AnimalController@show");
+Route::post("/animals", "AnimalController@store");
+
 Route::get("/owners", "OwnerController@index");
+Route::get("/owners/create", "OwnerController@create");
 Route::get("/owners/{owner_id}", "OwnerController@show");
+Route::post("/owners", "OwnerController@store");
 
 
