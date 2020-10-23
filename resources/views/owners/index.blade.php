@@ -13,10 +13,10 @@
 
 <ul>
 @foreach($owners as $owner) 
-    <a href={{action('OwnerController@show', $owner->id) }}><li>{{$owner->surname}} {{$owner->first_name}}</li></a>
-    <ul>
+<li><a href={{action('OwnerController@show', $owner->id) }}>{{$owner->surname}} {{$owner->first_name}}</a></li>
+    <ul> 
         @foreach($owner->animals as $animal) 
-        <a href="{{action('AnimalController@show', $animal->id)}}"><li>{{$animal->name}}</li></a>
+        <li><a href="{{action('AnimalController@show', $animal->id)}}">{{$animal->name}}</a></li>
         @endforeach
     </ul>
 @endforeach
