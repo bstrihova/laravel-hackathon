@@ -19,6 +19,14 @@ class OwnerController extends Controller
         return view("owners/index", compact("owners"));
     }
 
+    public function searchOwner(Request $request)
+    {
+        $surname = $request->input('surname');
+        $owners = Owner::with("animals")->where('surname', 'like','%' . $surname . '%')->orderBy("surname")->get();
+        return view("owners/index", compact("owners"));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
