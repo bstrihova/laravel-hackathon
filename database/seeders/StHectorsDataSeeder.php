@@ -28,7 +28,7 @@ $data = json_decode($json_string); // decode the string into data
 
             foreach ($value->pets as $pet) {
                 $animal = new Animal;
-                $animal->owner_id = $owner['id'];
+                $animal->owner_id = $owner->id;
                 $animal->name = $pet->name;
                 $animal->breed = $pet->breed;
                 $animal->weight = $pet->weight;
