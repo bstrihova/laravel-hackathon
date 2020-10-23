@@ -1,8 +1,7 @@
 
-<form action="{{ action('AnimalController@store') }}" method="post">
+<form action="{{ action('AnimalController@store', $owner_id) }}" method="post">
     
     @csrf
-    {{ $owner->id }}
         <label for="name">Name:
             <input type="text" name="name">
         </label><br>

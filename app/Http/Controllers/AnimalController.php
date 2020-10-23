@@ -24,9 +24,10 @@ class AnimalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($owner_id)
     {
-        return view('animals/create');
+
+        return view('animals/create', compact('owner_id'));
     }
 
     /**
@@ -35,11 +36,11 @@ class AnimalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $owner_id)
     {
         $animal = new Animal;
 
-        $animal->owner_id = 
+        $animal->owner_id = $owner_id;
         $animal->name = $request->input('name');
         $animal->species = $request->input('species');
         $animal->breed = $request->input('breed');
@@ -48,7 +49,7 @@ class AnimalController extends Controller
 
         $animal->save();
 
-        return redirect()->action('OwnerController@show', $owner->id);
+        return redirect()->action('OwnerController@show', $owner_id);
     }
 
     /**
