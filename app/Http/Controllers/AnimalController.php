@@ -70,9 +70,10 @@ class AnimalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($animal_id)
     {
-        //
+        $animal = Animal::findOrFail($animal_id);
+        return view('animals/edit', compact('animal'));
     }
 
     /**
@@ -84,17 +85,29 @@ class AnimalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $animal = Animal::findOrFail($id);
+
+        $animal->name = $request->input('name');
+        $animal->species = $request->input('species');
+        $animal->breed = $request->input('breed');
+        $animal->age = $request->input('age');
+        $animal->weight = $request->input('weight');
+
+        $animal->save();
+
+        return redirect()->action('AnimalController@edit', $id);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+   
+    public function delete($id)
     {
-        //
+        $animal = Animal::findOrFail($id);
+        return view("animals/delete", compact("animal"));
+    }
+
+    public function remove($id)
+    {
+        $animal = Animal::findOrFail($id);
+        $animal->delete();
     }
 }

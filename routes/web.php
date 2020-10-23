@@ -20,7 +20,13 @@ Route::get('/', function () {
 Route::get("/animals", "AnimalController@index");
 Route::get("/animals/create/{owner_id}", "AnimalController@create");
 Route::get("/animals/{animal_id}", "AnimalController@show");
+Route::get("/animals/edit/{animal_id}", "AnimalController@edit");
+Route::get("/animals/{id}/delete", "AnimalController@delete");
+
 Route::post("/animals/{owner_id}", "AnimalController@store");
+Route::post("/animals/edit/{animal_id}", "AnimalController@update");
+Route::get("/animals/{animal_id}", "AnimalController@remove");
+
 
 Route::get("/owners", "OwnerController@index");
 Route::get("/owners/create", "OwnerController@create");
