@@ -1,3 +1,9 @@
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
+
 <h1>Animal: {{ $animal->name }}</h1>
 
 <p>Age: {{ $animal->age }}</p>

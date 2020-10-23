@@ -49,7 +49,7 @@ class AnimalController extends Controller
 
         $animal->save();
 
-        return redirect()->action('OwnerController@show', $owner_id);
+        return redirect()->action('OwnerController@show', $owner_id)->with('status', 'Animal created!');
     }
 
     /**
@@ -95,7 +95,7 @@ class AnimalController extends Controller
 
         $animal->save();
 
-        return redirect()->action('AnimalController@edit', $id);
+        return redirect()->action('AnimalController@edit', $id)->with('status', 'Animal updated!');
     }
 
    
@@ -109,5 +109,6 @@ class AnimalController extends Controller
     {
         $animal = Animal::findOrFail($id);
         $animal->delete();
+        return redirect()->action('OwnerController@index')->with('status', 'Animal deleted!');
     }
 }

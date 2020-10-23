@@ -1,5 +1,9 @@
 Edit animal: {{$animal->name}}
-
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
 <form action="{{ action('AnimalController@update', $animal->id) }}" method="post">
     
     @csrf
