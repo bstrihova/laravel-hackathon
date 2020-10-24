@@ -158,3 +158,98 @@
         }
     }
 }
+
+
+.animal {
+    width: 1000px;
+    margin: auto;
+    margin-top: 2em;
+
+
+    .animal-container {
+        display: flex;
+        padding: 1em 5em;
+        justify-content: space-around;
+        background-color: lightgray;
+        border-radius: 10px;
+
+        .animal-card {
+
+            img {
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                margin-top: 0.5em;
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: 0.5em;
+            }
+        }
+
+        .animal-details {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            
+
+            .animal-info {
+                padding: 0 3em;
+                p {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+
+            .animal-btns{
+                display: flex;
+                align-self: flex-end;
+                
+                
+                button {
+                    margin: 0.5em 0;
+                    font-weight: bold;
+                    margin: 0 0.2em;
+                }
+            }
+        }
+    }
+
+    .section-container {
+        display:flex;
+        justify-content: space-between;
+
+        .owner-details {
+            width: 48%;
+            margin-top: 1em;
+            background-color: lightskyblue;
+            padding: 1em 4em;
+            border-radius: 10px;
+    
+            h2 {
+                text-align: center;
+                margin-bottom: 1em;
+            }
+    
+            p {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        .medical-history {
+            width: 48%;
+            margin-top: 1em;
+            background-color: rgb(53, 165, 185);
+            padding: 1em 4em;
+            border-radius: 10px;
+
+            h2 {
+                text-align: center;
+                margin-bottom: 1em;
+            }
+        }
+    }
+}
