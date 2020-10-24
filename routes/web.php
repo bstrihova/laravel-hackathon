@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get("/homepage", "HomepageController@index");
 
 Route::get("/animals", "AnimalController@index");
 Route::get("/animals/create/{owner_id}", "AnimalController@create");
