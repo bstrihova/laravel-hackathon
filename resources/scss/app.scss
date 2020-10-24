@@ -168,8 +168,8 @@
 
     .animal-container {
         display: flex;
-        padding: 1em 5em;
-        justify-content: space-around;
+        padding: 1em 3em 1em 5em;
+        justify-content: space-between;
         background-color: lightgray;
         border-radius: 10px;
 
@@ -205,7 +205,7 @@
 
             .animal-btns{
                 display: flex;
-                align-self: flex-end;
+                
                 
                 
                 button {
