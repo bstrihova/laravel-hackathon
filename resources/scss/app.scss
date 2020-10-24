@@ -25,3 +25,61 @@
         }
     }
 }
+
+.owner-list {
+    margin: auto;
+    padding: 3em;
+    width: 1000px;
+    font-family: sans-serif;
+
+    h2 {
+        text-align: center;  
+    }
+
+    &__content{
+        .btns {
+            display:flex;
+            justify-content: space-between;
+        }
+
+        .form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1em 0;
+            padding: 2em 0;
+            background-color: #F0F0F0;
+            border-radius: 10px;
+
+            form {
+                input {
+                    height: 38px;
+                    border: none;
+                    border-bottom: 0.1px solid black;
+                    margin: 0 0.5em;
+                    background-color: transparent;
+                }
+            }
+        }
+
+        .owner-table {
+            thead {
+                tr {
+                    th {
+                        padding-left: 4.5em;
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    th {
+                        padding-left: 4.5em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

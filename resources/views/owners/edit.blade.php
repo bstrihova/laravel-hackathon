@@ -1,3 +1,6 @@
+@extends('layouts/main')
+
+@section('content')
 
 <form action="{{ action('OwnerController@store') }}" method="post">
     
@@ -22,4 +25,4 @@
 
 <a href={{action('OwnerController@show', $owner->id)}}>Go back to Animal</a>
 
-
+@endsection

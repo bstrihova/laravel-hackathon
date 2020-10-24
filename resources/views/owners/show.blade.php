@@ -1,3 +1,7 @@
+@extends('layouts/main')
+
+@section('content')
+
 <h1>{{$owner->surname}} {{$owner->first_name}}</h1>
 <p>Address: {{$owner->address}}</p>
 <p>Telephone: {{$owner->phone_number}}</p>
@@ -24,4 +28,6 @@
     @endforeach
     </ul>
 </div>
+
+@endsection
 

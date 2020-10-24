@@ -1,3 +1,6 @@
+@extends('layouts/main')
+
+@section('content')
 
 <form action="{{ action('OwnerController@store') }}" method="post">
     
@@ -19,3 +22,5 @@
 
     <button type="submit">Add new owner</button>
 </form>
+
+@endsection

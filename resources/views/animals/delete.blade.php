@@ -1,3 +1,7 @@
+@extends('layouts/main')
+
+@section('content')
+
 <h1>Delete animal: {{$animal->name}}</h1>
 <form action="" method="get">
     @csrf
@@ -6,3 +10,5 @@
     <button type="submit">Delete</button>
 
 </form>
+
+@endsection

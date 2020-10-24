@@ -1,3 +1,7 @@
+@extends('layouts/main')
+
+@section('content')
+
 @if (session('status'))
     <div class="alert alert-success">
         {{ session('status') }}
@@ -21,6 +25,5 @@
 <p>Phone number: {{ $animal->owner->phone_number }}</p>
 <p>email: {{ $animal->owner->email }}</p>
 
-
-
+@endsection
 

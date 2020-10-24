@@ -1,3 +1,7 @@
+@extends('layouts/main')
+
+@section('content')
+
 
 <form action="{{ action('AnimalController@store', $owner_id) }}" method="post">
     
@@ -20,3 +24,5 @@
     
         <button type="submit">Add new Animal</button>
     </form>
+    
+@endsection

@@ -1,3 +1,7 @@
+@extends('layouts/main')
+
+@section('content')
+
 Edit animal: {{$animal->name}}
 @if (session('status'))
     <div class="alert alert-success">
@@ -27,3 +31,5 @@ Edit animal: {{$animal->name}}
     </form>
 
 <a href={{action('AnimalController@show', $animal->id)}}>Go back to Animal</a>
+
+@endsection
