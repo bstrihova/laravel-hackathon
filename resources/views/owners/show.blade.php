@@ -22,7 +22,7 @@
             <a href={{action('AnimalController@create', $owner->id) }}><button class="new-animal-btn">Create a new Animal</button></a>
             @foreach ($owner->animals as $animal)
                 <div class="animal-item">
-                    <img src={{asset($animal->photo)}}>
+                    <a href=" {{action('AnimalController@show', $animal->id) }}"><img src={{asset($animal->photo)}}></a>
                     <p class="name">{{$animal->name}} </p>
                 </div>
             @endforeach
