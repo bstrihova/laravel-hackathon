@@ -26,7 +26,8 @@ Route::get("/animals/edit/{animal_id}", "AnimalController@edit");
 Route::get("/animals/{id}/delete", "AnimalController@delete");
 
 Route::post("/animals/{owner_id}", "AnimalController@store");
-Route::post("/animals/edit/{animal_id}", "AnimalController@update");
+Route::put("/animals/edit/{animal_id}", "AnimalController@update");
+Route::delete("/animals/{id}/", "AnimalController@destroy");
 
 
 Route::get("/owners", "OwnerController@index");

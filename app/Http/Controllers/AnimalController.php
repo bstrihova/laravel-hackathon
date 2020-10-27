@@ -105,7 +105,7 @@ class AnimalController extends Controller
         return view("animals/delete", compact("animal"));
     }
 
-    public function remove($id)
+    public function destroy($id)
     {
         $animal = Animal::findOrFail($id);
         $animal->delete();

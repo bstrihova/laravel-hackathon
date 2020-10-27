@@ -10,8 +10,9 @@
 
 <div class="new-animal-form">
     <h3>Edit animal: {{$animal->name}}</h3>
-    <form action="{{ action('AnimalController@update', $animal->id) }}" method="post">
+    <form action="{{ action('AnimalController@update', $animal->id) }}" method="POST">
          @csrf
+         @method("PUT")
         <label for="name">Name:</label>
         <input type="text" name="name" value={{$animal->name}}><br> 
 
