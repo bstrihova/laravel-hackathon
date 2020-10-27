@@ -6,6 +6,7 @@
         <h3>New Owner</h3>
         <form action="{{ action('OwnerController@update', $owner->id) }}" method="post">
             @csrf
+            @method("PUT")
             <label for="first_name">First Name:</label>
                 <input type="text" name="first_name" value='{{$owner->first_name}}'><br>
             

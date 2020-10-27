@@ -34,6 +34,6 @@ Route::get("/owners", "OwnerController@index");
 Route::get("/owners/create", "OwnerController@create");
 Route::get("/owners/{owner_id}", "OwnerController@show");
 Route::get("/owners/edit/{owner_id}", "OwnerController@edit");
-Route::post("/owners/edit/{owner_id}", "OwnerController@update");
+Route::put("/owners/edit/{owner_id}", "OwnerController@update");
 Route::post("/owners", "OwnerController@store");
 
